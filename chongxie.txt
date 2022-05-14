@@ -241,8 +241,8 @@ http:\/\/analytics\.163\.com\/ntes url reject
 # > 熊猫直播
 ^https?:\/\/static\.api\.m\.panda\.tv\/index\.php\?method=clientconf\.firstscreen&__version=(play_cnmb|(\d+\.){0,3}\d+)&__plat=ios&__channel=appstore url reject-img
 # > 抖音去广告, 去水印
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/(feed|aweme\/post|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ url script-request-header https://gitee.com/a28413761/QX/raw/master/JS/douyin.js
-^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/(feed|aweme\/post|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/douyin.js
+^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/(feed|aweme\/post|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ url script-request-header https://raw.githubusercontent.com/28413761/QX/main/JS/douyin.js
+^https?:\/\/.+?\.amemv\.com\/aweme\/v\d\/(feed|aweme\/post|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/douyin.js
 ^https?:\/\/.*\.(snssdk\.com|musical\.ly|amemv\.com|byteoversea\.com|tiktokv\.com)\/(vapp\/inner_ad|log|location)\/ url reject
 ^https?:\/\/x?log.*\.(snssdk\.com|musical\.ly|amemv\.com|byteoversea\.com|tiktokv\.com)\/ url reject
 ^https?:\/\/api\d?\.musical\.ly\/api\/ad\/ url reject-img
@@ -320,8 +320,8 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads url reject
 ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/\w+\/\w+\/(sync|newRnSync|mlog) url reject
 ^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/c\/s\/splashSchedule url reject
-^(http:\/\/c\.tieba\.baidu\.com\/(tiebaads\/commonbatch|c\/s\/sync)|https:\/\/afd\.baidu\.com\/afd\/entry) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/tieba-json.js
-^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/tieba-proto.js
+^(http:\/\/c\.tieba\.baidu\.com\/(tiebaads\/commonbatch|c\/s\/sync)|https:\/\/afd\.baidu\.com\/afd\/entry) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/tieba-json.js
+^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/tieba-proto.js
 # > 百度翻译
 ^https?:\/\/mime\.baidu\.com\/v\d\/IosStart\/getStartInfo$ url reject
 ^https?:\/\/mime\.baidu\.com\/v\d\/activity\/advertisement url reject
@@ -334,10 +334,9 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https?:\/\/afd.baidu.com\/afd\/entry url reject
 ^https?:\/\/mobads\.baidu\.com\/cpro\/ui\/mads.+ url reject
 ^https:\/\/mobads\.baidu\.com\/cpro\/ui\/mads\.php.+ url reject
-^https?:\/\/(www|m)\.baidu\.com(\/s\?word.*|\/from.*?\/s\?word.*|\/from.*?word=.*) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_baidu.js
+^https?:\/\/(www|m)\.baidu\.com(\/s\?word.*|\/from.*?\/s\?word.*|\/from.*?word=.*) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/surge_baidu.js
 ^https?:\/\/(www|m)\.baidu\.com(/|\/\?ref.*)$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/surge_baidu.index.js
-^https?:\/\/(www|m)\.baidu\.com(/|\/\?ref.*)$ url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_baidu.index.js
-^https?:\/\/(zhidao)\.baidu\.com\/(question|index|\?fr|\?word) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_baidu.zhidao.js
+^https?:\/\/(zhidao)\.baidu\.com\/(question|index|\?fr|\?word) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/surge_baidu.zhidao.js
 (ps|sv|offnavi|newvector|ulog.imap|newloc)(.map)?.(baidu|n.shifen).com url reject
 ^https?+:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao\/ url reject-200
 ^https?:\/\/[\s\S]*\.baidu\.com/.*?ad[xs]\.php url reject-img
@@ -368,7 +367,7 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https:\/\/j-image\.missfresh\.cn\/img_(.+)\.gif$ url reject
 ^https:\/\/j-image\.missfresh\.cn\/img_(.+)\.(jpg|jpeg|gif|png)\?iopcmd=convert&dst=webp&q=85$ url reject
 # > 知乎开屏页广告,首页右下角悬浮框,推荐列表广告,问题回答列表广告,具体回答下广告
-^https:\/\/(appcloud2\.zhihu\.com\/v3\/config$|www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations|api\.zhihu\.com\/(topstory\/recommend|commercial_api\/(real_time_launch_v2|app_float_layer$)|questions\/\d+\/feeds\?|v4\/questions\/\d+\/answers\?)) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/zhihu.js
+^https:\/\/(appcloud2\.zhihu\.com\/v3\/config$|www\.zhihu\.com\/api\/v4\/answers\/\d+\/recommendations|api\.zhihu\.com\/(topstory\/recommend|commercial_api\/(real_time_launch_v2|app_float_layer$)|questions\/\d+\/feeds\?|v4\/questions\/\d+\/answers\?)) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/zhihu.js
 # > 知乎
 ^https?:\/\/www\.zhihu\.com\/api\/v4\/community-ad\/ url reject
 ^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers/\d+/recommendations url reject
@@ -412,7 +411,7 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https?:\/\/m1\.ad\.10010\.com\/noticeMag\/images\/imageUpload\/2\d{3} url reject-img
 ^https?:\/\/res\.mall\.10010\.cn\/mall\/common\/js\/fa\.js?referer= url reject-img
 # > 联通营业厅轮播广告 (By Wangsc1)
-^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/china_unicom.js
+^https?://m.client.10010.com/uniAdmsInterface/getHomePageAd url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/china_unicom.js
 # > 中国电信
 ^https?:\/\/cloud\.189\.cn\/include\/splash\/ url reject
 ^https?:\/\/zt-app\.go189\.cn\/zt-app\/welcome\/.*?Animation url reject-img
@@ -515,25 +514,25 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/ url reject
 # > 哔哩哔哩
 # > 哔哩哔哩_繁体CC字幕转中文简体
-^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_cc.js
+^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_cc.js
 # > 哔哩哔哩_观影页面广告
-^https?:\/\/api\.bilibili\.com\/pgc\/page\/cinema\/tab\? url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/cinema\/tab\? url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_开屏广告
 ^https://app.bilibili.com/x/v2/splash/show url reject-dict
 # > 哔哩哔哩_开屏广告预加载
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_统一设置的皮肤
-^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_1080P高码率+4K画质(番剧和影视除外)
-^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_热搜发现
-^https://app.bilibili.com/x/v2/search/square url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https://app.bilibili.com/x/v2/search/square url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_Defaultword
 ^https://app.bilibili.com/x/v2/search/defaultwords url reject-dict
 # > 哔哩哔哩_Material_Ad
 ^https?:\/\/api\.bilibili\.com\/x\/vip\/ads\/material\/report url reject-dict
 # > 哔哩哔哩_收藏前10
-;^https:\/\/app\.bilibili\.com\/x\/v2\/space\?access_key url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_space_10.js
+;^https:\/\/app\.bilibili\.com\/x\/v2\/space\?access_key url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_space_10.js
 # > 哔哩哔哩_小卡片广告
 ^https://api.bilibili.com/pgc/season/player/cards url reject-dict
 # > 哔哩哔哩_解除SIM卡地区限制
@@ -549,21 +548,21 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 # > 哔哩哔哩_=漫画广告
 ^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/(Flash|ListFlash) url reject-dict
 # > 哔哩哔哩_推广广告
-^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_追番广告
-^https?:\/\/api\.bilibili\.com\/pgc\/page\/bangumi url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/bangumi url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_直播广告
-^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_动态广告
-^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/dynamic_(history|new)\? url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/dynamic_(history|new)\? url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_标签页处理
-^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_我的页面处理
-^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_diy.js
+^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_diy.js
 # > 哔哩哔哩_Proto广告
-^https:\/\/app\.bilibili\.com\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili-proto.js
+^https:\/\/app\.bilibili\.com\/bilibili\.app\.(view\.v1\.View\/View|dynamic\.v2\.Dynamic\/DynAll)$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili-proto.js
 # > 哔哩哔哩_动态广告
-;^https://app\.bilibili\.com/bilibili\.app\.dynamic\.v2\.Dynamic/DynAll$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/bilibili_dynamic.js
+;^https://app\.bilibili\.com/bilibili\.app\.dynamic\.v2\.Dynamic/DynAll$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/bilibili_dynamic.js
 # > 快手
 ^https:\/\/open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$ url reject
 # > 永辉
@@ -727,7 +726,7 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
 ^https?:\/\/ctrl\.(playcvn|zmzapi)\.(com|net)\/app\/(ads|init) url reject-200
 ^https?:\/\/ctrl\.zmzapi\.net\/app\/ads url reject-img
 ^https?:\/\/ctrl\.zmzapi\.net\/app\/init url reject-img
-^http://ctrl.playcvn.com/app/(init|ads) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/YYeTs.js
+^http://ctrl.playcvn.com/app/(init|ads) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/YYeTs.js
 # > 微店
 ^https?:\/\/thor\.weidian\.com\/ares\/home\.splash\/ url reject
 # > 迅雷
@@ -769,12 +768,12 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
 ^https:\/\/fdfs.xmcdn.com\/group24\/M07\/C4\/3D\/ url reject
 ^https:\/\/fdfs.xmcdn.com\/group25\/M05\/92\/D1\/ url reject
 # > 小红书
-^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/xiaohongshu.ad.js
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/xiaohongshu.ad.js
 # > 飞客茶馆
 ^https?:\/\/ptf\.flyertrip\.com\/common\/cf\/.*.jpg url reject-200
 ^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=advis url reject
 ^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist url response-body adv response-body ddgksf2013
-^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1 url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/fly.js
+^https?:\/\/47\.100\.65\.202\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1 url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/fly.js
 # > 京东
 ^https?:\/\/m15\.360buyimg\.com\/mobilecms\/jfs\/t1\/202220\/24\/21575\/134711\/625b821bE5d642d73\/77636692989bd2be\.jpg url reject
 ^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs\/t1\/96405\/17\/28473\/168578\/625cd144E7997a990\/8233ce8a10c4e463\.jpg url reject
@@ -795,7 +794,7 @@ https?:\/\/t7z\.cupid\.iqiyi\.com\/show url reject
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ url reject
 ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url reject
 https://dns.jd.com/v6 url reject-dict
-^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/startup.js
+^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=start url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/startup.js
 
 ^https?+:\/\/api\.m\.jd\.com\/client\.action\?functionId=start$ url reject-200
 ^https?+:\/\/b?dsp-x\.jd\.com\/adx\/ url reject-200
@@ -897,9 +896,9 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising url reject
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads url reject
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=get_coopen_ads url reject-img
 # > 删除微博开屏广告
-^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/weibo_launch.js
+^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/weibo_launch.js
 # > 微博去广告
-^https?://m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(unread_hot_timeline|extend|video_mixtimeline)|profile/(me|statuses)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/weibo_main.js
+^https?://m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(unread_hot_timeline|extend|video_mixtimeline)|profile/(me|statuses)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/weibo_main.js
 # > 新浪新闻
 ^https?:\/\/edit\.sinaapp\.com\/ua\?t=adv url reject
 ^https?+:\/\/edit\.sinaapp\.com\/ua\?t=adv url reject-200
@@ -1052,7 +1051,7 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising url reject
 ^https://magev6.if.qidian.com/argus/api/v1/bookshelf/getad url reject
 ^https://magev6.if.qidian.com/argus/api/v4/client/getsplashscreen? url reject
 # > 起点开屏页广告,每日导读去除,冷启动强制跳转精选页去除,去除发现页弹出的活动弹窗,去除下方(精选 发现 中间的)活动时的tab,去除书架右下角的活动/广告的悬浮icon,搜索页可以搜索用户
-^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?positions=iOS_tab|dailyrecommend\/getdailyrecommend)) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/qidian.js
+^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/(v4\/client\/getsplashscreen|v2\/deeplink\/geturl|v1\/(client\/getconf|adv\/getadvlistbatch\?positions=iOS_tab|dailyrecommend\/getdailyrecommend)) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/qidian.js
 # > 有兔阅读(米兔)
 ^http:\/\/img\.dailmo\.com\/img\/61\/23c7125bfe6166d69f3bff5b0ca4d31e\.jpg url reject
 ^http:\/\/img\.dailmo\.com\/img\/50\/edb40c6392f848df37f9c31d8a6f90f6\.jpg url reject
@@ -1133,7 +1132,7 @@ https://api.m.jd.com/client.action\?functionId=lite_advertising url reject
 ^https?:\/\/pagead2\.googlesyndication\.com\/pagead\/ url reject-img
 ^https?:\/\/[\w-]+\.googlevideo\.com\/.+&(oad|ctier) url reject
 ^https?:\/\/.+\.googlevideo\.com\/videogoodput url reject-img
-^https?:\/\/(www\.bing)(\.\w{2,4}){1,2}\/(search\?.*|\?sa=|\?FORM)(?!.*?(apps=)).* url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_contentFarm.js
+^https?:\/\/(www\.bing)(\.\w{2,4}){1,2}\/(search\?.*|\?sa=|\?FORM)(?!.*?(apps=)).* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/surge_contentFarm.js
 # > 油管
 ctier=[A-Z] url 302 ctier=A
 ^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier) url reject-200
@@ -1542,11 +1541,11 @@ https://new-app-api.ylyk.com/v1/user/myinfo/adviser url reject
 # > 虎嗅
 ^https:\/\/api-ad-product\.huxiu\.com\/Api\/Product\/SDK\/Advert\/Query\/queryAdvertListInfo url reject
 # > vgTime
-^http:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/vgtime.js
+^http:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/vgtime.js
 # > 快手联盟,优量汇,穿山甲
-^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/adsense.js
+^https:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/adsense.js
 # > 动画疯(黑屏25秒)
-^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\? url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/BahamutAnimeAds.js
+^https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\? url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/BahamutAnimeAds.js
 # > 滴滴出行（推荐英文版）
 https?://res\.xiaojukeji\.com\/resapi\/activity\/mget url reject-dict
 https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNotices) url reject
@@ -1558,11 +1557,11 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 # > 3.添加下一小时降水:气象在线
 # > 4.替换空气质量地图数据:WAQI
 # > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url request-header If-None-Match:.+\r\n request-header \r\n
-# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/availability\/.* url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/Weather.Availability.js
-# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/Weather.js
-# > ^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/.*(\?.*country=CN.*) url script-request-header https://gitee.com/a28413761/QX/raw/master/JS/Weather.Map.js
+# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/availability\/.* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/Weather.Availability.js
+# > ^https?:\/\/weather-data\.apple\.com\/(v1|v2)\/weather\/.* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/Weather.js
+# > ^https?:\/\/weather-map\.apple\.com\/(v1|v2)\/mapOverlay\/.*(\?.*country=CN.*) url script-request-header https://raw.githubusercontent.com/28413761/QX/main/JS/Weather.Map.js
 # > 皮皮虾
-^https?://.*\.snssdk\.com/bds/(feed/stream|comment/cell_reply|cell/cell_comment|cell/detail|ward/list|user/favorite|user/cell_coment|user/cell_userfeed|user/publish_list) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/Super.js
+^https?://.*\.snssdk\.com/bds/(feed/stream|comment/cell_reply|cell/cell_comment|cell/detail|ward/list|user/favorite|user/cell_coment|user/cell_userfeed|user/publish_list) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/Super.js
 # > 瑞幸咖啡（倒计时还在）
 ^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group1\/M00\/8B\/ED\/.*.jpg url reject-200
 # > img0[1-9]{1}\.luckincoffeecdn\.com  img01-img09前缀的域名都匹配 主机名*代替
@@ -1722,232 +1721,232 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 ^https?:\/\/yxyapi\d\.drcuiyutao\.com\/yxy-api-gateway\/api\/json\/advert\/ url reject
 # > 解锁
 # > NiChi 解锁素材包
-^https?:\/\/m(p|ini-hk)\.bybutter\.com\/mood\/(official-templates|privileges) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/NiChi.js
+^https?:\/\/m(p|ini-hk)\.bybutter\.com\/mood\/(official-templates|privileges) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/NiChi.js
 # > 堆糖解锁V
-^https?:\/\/www\.duitang\.com\/napi\/vienna\/graphic\/template url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/duitangpro.js
+^https?:\/\/www\.duitang\.com\/napi\/vienna\/graphic\/template url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/duitangpro.js
 # > 石墨文档解锁
-https://api.shimo.im/users/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/shimo.js
+https://api.shimo.im/users/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/shimo.js
 # > 什么值得买解锁
-^https:\/\/homepage-api.smzdm.com\/home url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/smzdm_remove_ads.js
-^https:\/\/haojia-api.smzdm.com\/home\/list url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/smzdm_remove_ads.js
-^https:\/\/article-api.smzdm.com\/article\/index_home_page url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/smzdm_remove_ads.js
+^https:\/\/homepage-api.smzdm.com\/home url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/smzdm_remove_ads.js
+^https:\/\/haojia-api.smzdm.com\/home\/list url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/smzdm_remove_ads.js
+^https:\/\/article-api.smzdm.com\/article\/index_home_page url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/smzdm_remove_ads.js
 # > 可可英语解锁V
-^https:\/\/mob2015\.kekenet\.com\/keke\/mobile\/index\.php url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/kkyy.js
+^https:\/\/mob2015\.kekenet\.com\/keke\/mobile\/index\.php url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/kkyy.js
 # > 每日英语阅读/每日外刊解锁课程
-^https:\/\/dict\.eudic\.net\/jingting\/GetThisChapterTaskStatus? url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/mryy.js
+^https:\/\/dict\.eudic\.net\/jingting\/GetThisChapterTaskStatus? url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/mryy.js
 # > 网易蜗牛读书解锁特权
-^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/wnyd.js
+^https?:\/\/p\.du\.163\.com\/gain\/readtime\/info\.json url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/wnyd.js
 # > 解锁一木记账V
-^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/ url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/YiMuJiZhang.js
+^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/YiMuJiZhang.js
 # > 海豚记账
-https:\/\/book\.haitunwallet\.com\/app\/vip\/status url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/HTJZ.js
+https:\/\/book\.haitunwallet\.com\/app\/vip\/status url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/HTJZ.js
 # > 解锁闪电下载无限时长V
-^https?:\/\/bt\.flashdown365\.com\/resource2\?data\=\w{0,500}$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/ShanDianXiaZai.js
+^https?:\/\/bt\.flashdown365\.com\/resource2\?data\=\w{0,500}$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/ShanDianXiaZai.js
 # > 七猫小说解锁终身V + 去除所有广告 + 无限下载权限 + 无限听书权限 + 无限阅读权限
-^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/QiMaoXiaoShuo.js
+^https?:\/\/(api-\w+|xiaoshuo)\.wtzw\.com\/api\/v\d\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/QiMaoXiaoShuo.js
 # > 解锁菜谱大全V
-^https?:\/\/apiios_dq\.xiangha\.com\/v\d\/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/CaiPuDaQuan.js
-^https?:\/\/appweb_dq\.xiangha\.com\/center\/pay\/home url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/CaiPuDaQuan.js
+^https?:\/\/apiios_dq\.xiangha\.com\/v\d\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/CaiPuDaQuan.js
+^https?:\/\/appweb_dq\.xiangha\.com\/center\/pay\/home url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/CaiPuDaQuan.js
 # > 马卡龙玩图解锁订阅
-^https?:\/\/app\.api\.versa-ai\.com\/pay\/order\/iap\/check url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/MaKaLongWanTu.js
+^https?:\/\/app\.api\.versa-ai\.com\/pay\/order\/iap\/check url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/MaKaLongWanTu.js
 # > Spotify部分解锁premium 需iOS15 ,建议重新登录,音质不能设置为超高，搜索界面 歌单/歌曲可以随意切换完全播放  2. 音乐库已点赞歌曲随意切换完全播放
-^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/spotify-proto.js
+^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/spotify-proto.js
 # > 轻颜相机 Ulike 蒸汽波相机(vaporcam) 三合一解锁V
-https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/qyxj.js
+https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qyxj.js
 # > 美图秀秀(2022.01.17) 解锁高级V（包括但不限于：付费海报模板、高级滤镜、高级素材等），无须登陆!
-^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/MeiTuXiuXiu.js
+^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/MeiTuXiuXiu.js
 # > WPS解锁超级V，wpsV，稻壳V
-^https://account.wps.*/api/users/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/Wps.js
+^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/Wps.js
 # > 有道云笔记解锁V
-https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/ydybj.js
+https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/ydybj.js
 # > 酷我音乐解锁SV
-^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/Kuwo.js
+^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/Kuwo.js
 # > 百度网盘解锁V，视频倍速播放     
-https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/BaiduCloud.js
+https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/BaiduCloud.js
 # > 菠萝视频解锁V无限看，没破解付费， 下载地址https://aff.polomv.com           
-^http:\/\/api\.myb6api\.(org|com):8080\/api\.php\/api\/users\/getBaseInfo url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/blsp.js
+^http:\/\/api\.myb6api\.(org|com):8080\/api\.php\/api\/users\/getBaseInfo url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/blsp.js
 # > 桃子视频解锁V
-^http:\/\/api\.(.+)\.xyz\/fast-cloud\/user\/info url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/taozi.js
+^http:\/\/api\.(.+)\.xyz\/fast-cloud\/user\/info url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/taozi.js
 # > 酷咪视频V无限看， 下载地址 km.app      
-^https:\/\/lginstaacademy\.com(\/\/api\/movie\/addPlay|\/\/api\/member|\/api\/video_clip\/play|\/api\/app\/message_list|\/api\/home\/index_recommend|\/\/api\/movie\/play\/|\/\/api\/vip\/index) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/kumiyw.js
+^https:\/\/lginstaacademy\.com(\/\/api\/movie\/addPlay|\/\/api\/member|\/api\/video_clip\/play|\/api\/app\/message_list|\/api\/home\/index_recommend|\/\/api\/movie\/play\/|\/\/api\/vip\/index) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/kumiyw.js
 # > 韩剧TV解锁全部特权
-^https\:\/\/hjapi\.bjxkhc\.com\/v2d2\/users\/.*\/member url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/hanjuTV.js
+^https\:\/\/hjapi\.bjxkhc\.com\/v2d2\/users\/.*\/member url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/hanjuTV.js
 # > 爱美剧解锁V
-^https?:\/\/api.bjxkhc.com\/index\.php\/app\/ios\/(vod\/show|(user|vod|topic|type)\/index) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiaoben/aimeiju.js
+^https?:\/\/api.bjxkhc.com\/index\.php\/app\/ios\/(vod\/show|(user|vod|topic|type)\/index) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/aimeiju.js
 # > 095 夏时VPN解鎖會員權限（2022-05-03）@ddgksf2013
 ^https?:\/\/hotspot-unlimited\.com\/addressx2\/ url response-body vip":"1 response-body vip":"0
 # > 093 Lake解鎖V權限（2022-04-20）@ddgksf2013
-https?:\/\/revenuecat\.lakecoloring\.com\/v\d\/(receipts|subscribers) url script-echo-response https://gitee.com/a28413761/QX/raw/master/jiesuo/lakepro.js
+https?:\/\/revenuecat\.lakecoloring\.com\/v\d\/(receipts|subscribers) url script-echo-response https://raw.githubusercontent.com/28413761/QX/main/jiesuo/lakepro.js
 # > 090 PdfExpert Pro 解锁V权限（2022-03-26）@ddgksf2013：无需登录，会员恢复成功后，🟢建议关闭PdfExpert应用的联网权限
-^https?:\/\/license\.pdfexpert\.com\/api\/\d\.\d\/\w{9}\d\/\w{12}\/(state$|refresh$|check$) url script-request-body  https://gitee.com/a28413761/QX/raw/master/jiesuo/pdfexpert.js
+^https?:\/\/license\.pdfexpert\.com\/api\/\d\.\d\/\w{9}\d\/\w{12}\/(state$|refresh$|check$) url script-request-body  https://raw.githubusercontent.com/28413761/QX/main/jiesuo/pdfexpert.js
 # > 089 appraven美化（2022-03-23）@ddgksf2013
-^https?:\/\/appraven\.net\/AppRaven\/(app|social|buy) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/appraven.js
+^https?:\/\/appraven\.net\/AppRaven\/(app|social|buy) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/appraven.js
 # > 088 Symbolab 解锁订阅（2022-03-22）
-^https?:\/\/scibug\.com\/appleSubscriptionValidate$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/symbolab.js
+^https?:\/\/scibug\.com\/appleSubscriptionValidate$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/symbolab.js
 # > 087 FT中文網解鎖V權限（2022-03-06）@ddgksf2013
-^https?:\/\/user\.ftmailbox\.cn\/ios-receipt-validation\.php.* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/ftchinese.js
+^https?:\/\/user\.ftmailbox\.cn\/ios-receipt-validation\.php.* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/ftchinese.js
 # > 086 Videoleap解鎖V權限（2022-03-05）@ddgksf2013：有待进一步测试
-https?:\/\/api\.lightricks\.com\/subscription\?bundle=com\.lightricks\.Enlight-Video url script-echo-response https://gitee.com/a28413761/QX/raw/master/jiesuo/videoleap.js
+https?:\/\/api\.lightricks\.com\/subscription\?bundle=com\.lightricks\.Enlight-Video url script-echo-response https://raw.githubusercontent.com/28413761/QX/main/jiesuo/videoleap.js
 # > 085 Wallcraft解鎖V權限（2022-03-04）@ddgksf2013
 ^https?:\/\/billing-ios\.wallpaperscraft\.com\/verify_receipt\/remove_ads$ url response-body active":false response-body active":true
 # > 084 Wink解鎖V權限（2022-03-04）@ddgksf2013
-https?:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info\.json url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/wink.js
+https?:\/\/api-sub\.meitu\.com\/v\d\/user\/vip_info\.json url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/wink.js
 # > 083 一甜相機解鎖V權限（2022-02-27）@ddgksf2013
-https?:\/\/m2u-api\.getkwai\.com\/api-server\/api\/v\d\/vip\/vipUserInfo url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/yitianxiangji.js
+https?:\/\/m2u-api\.getkwai\.com\/api-server\/api\/v\d\/vip\/vipUserInfo url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/yitianxiangji.js
 # > 082 傲軟摳圖解鎖V權限（2022-02-25）@ddgksf2013
-https?:\/\/gw\.aoscdn\.com\/base\/vip\/client\/authorizations$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/apowersoft.js
+https?:\/\/gw\.aoscdn\.com\/base\/vip\/client\/authorizations$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/apowersoft.js
 # > 081 布丁鎖屏解鎖V權限（2022-02-21）@ddgksf2013
-https?:\/\/screen-lock\.51wnl-cq\.com\/userApi\/saveUser url script-echo-response https://gitee.com/a28413761/QX/raw/master/jiesuo/budingsuoping.js
+https?:\/\/screen-lock\.51wnl-cq\.com\/userApi\/saveUser url script-echo-response https://raw.githubusercontent.com/28413761/QX/main/jiesuo/budingsuoping.js
 # > 080 起伏解鎖V權限（2022-02-19）@ddgksf2013
-https?:\/\/api\.risingfalling\.com\/api\/vip\/detail url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/qifu.js
+https?:\/\/api\.risingfalling\.com\/api\/vip\/detail url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qifu.js
 # > 079 Picsart美易解鎖V權限（2022-02-19）@ddgksf2013
-^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/picsart.js
+^https?:\/\/api\.meiease\.cn\/shop\/subscription\/validate url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/picsart.js
 # > 078 圖圖記賬解鎖V權限（2022-02-18）@ddgksf2013
-https?:\/\/api\.magictouch\.design\/user\/user\/getUserByDevice url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/tutujizhang.js
+https?:\/\/api\.magictouch\.design\/user\/user\/getUserByDevice url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/tutujizhang.js
 # > 077 咿啦看書解鎖V權限（2022-02-17）@ddgksf2013
-https?:\/\/bookapi\.ellabook\.cn\/rest\/api\/service$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/elabook.js
+https?:\/\/bookapi\.ellabook\.cn\/rest\/api\/service$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/elabook.js
 # > 076 RNI解锁高级V（2022-02-15）by ddgksf2013
-https://pro-status-service-prod.azurewebsites.net/api/item url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/rf.js
+https://pro-status-service-prod.azurewebsites.net/api/item url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/rf.js
 # > 075 儿歌点点(2022-02-08) by ddgksf2013
-http:\/\/gateway\.ergedd\.com\/dduser\/user\/center\/set url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/egdd.js
+http:\/\/gateway\.ergedd\.com\/dduser\/user\/center\/set url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/egdd.js
 # > 074 varlens(2022-02-02) by ddgksf2013
-^https?:\/\/mid\.zineapi\.com\/@varlens\/api\/user\/info\/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/varlens.js
+^https?:\/\/mid\.zineapi\.com\/@varlens\/api\/user\/info\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/varlens.js
 # > 073 Mix（2022-02-01）by ddgksf2013
-^https:\/\/bmall\.camera360\.com\/api\/(iap\/check-receipt$|mix\/getinfo$) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/mix.js
+^https:\/\/bmall\.camera360\.com\/api\/(iap\/check-receipt$|mix\/getinfo$) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/mix.js
 # > 072 Cutisan（2022-01-30）by ddgksf2013
-https://cutisanapi.imuuzi.com/api/Home/index url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/cutisan.js
+https://cutisanapi.imuuzi.com/api/Home/index url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/cutisan.js
 # > 071 fimo（2022-01-28）by ddgksf2013
-^https://server.yoyiapp.com/fimo-user/user$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/fimo.js
+^https://server.yoyiapp.com/fimo-user/user$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/fimo.js
 # > 070 钱迹（2022-01-25）by ddgksf2013
-https?://qianji.xxoojoke.com/(vip/configios|budget/submit) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/qj.js
+https?://qianji.xxoojoke.com/(vip/configios|budget/submit) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qj.js
 # > 069 训记 (2022-01-25) by ddgksf2013
 https://xunji.implements.io/whole_user_info url response-body vipDay":0 response-body vipDay":360
 # > 068 hyperweb (2022-01-25) by ddgksf2013
-^https://zy6kcqa01a.execute-api.us-east-2.amazonaws.com/prod/verifyReceipt url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/hyperweb.js
+^https://zy6kcqa01a.execute-api.us-east-2.amazonaws.com/prod/verifyReceipt url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/hyperweb.js
 # > 067 B612咔叽 (2022-01-25) by ddgksf2013
-https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/612.js
+https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/612.js
 # > 066 酷我音乐解除下载权限 (2022-01-25) by ddgksf2013
-^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver=\d url script-request-body https://gitee.com/a28413761/QX/raw/master/jiesuo/kuwodl.js
+^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver=\d url script-request-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/kuwodl.js
 # > 065 通话录音（2021-06-25）by ddgksf2013
-http://micro-tool-api.lyaway.com/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/thly.js
+http://micro-tool-api.lyaway.com/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/thly.js
 # > 063 Photomath （2021-06-02） by ddgksf2013
-https://lapi.photomath.net/v4/me url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/poh.js
+https://lapi.photomath.net/v4/me url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/poh.js
 # > 062 Prisma （2021-05-24） by ddgksf2013
-https://api.neuralprisma.com/receipt/ios/status/prisma/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/psa.js
+https://api.neuralprisma.com/receipt/ios/status/prisma/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/psa.js
 # > 061 京东取消店铺会员（2021-05-16） by ddgksf2013
-https://api\.m\.jd\.com\/client\.action\?appid=jd_shop_member&functionId=getShopMemberCardDetail&.+ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/unbind.js
+https://api\.m\.jd\.com\/client\.action\?appid=jd_shop_member&functionId=getShopMemberCardDetail&.+ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/unbind.js
 # > 060 我奥篮球 （2021-05-15） by photonmang
-http://api.woaoo.net/.+ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/walq.js
+http://api.woaoo.net/.+ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/walq.js
 # > 059 西窗烛 （2021-05-14） by ddgksf2013
-https://lchttpapi.xczim.com/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/xcz.js
+https://lchttpapi.xczim.com/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/xcz.js
 # > 058 Vizmato（2021-05-12） by ddgksf2013
-https://web.vizmato.com/itunesreceipt_v5.php url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/vm.js
+https://web.vizmato.com/itunesreceipt_v5.php url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/vm.js
 # > 057 ToonMe（2021-05-05） by ddgksf2013
-https://purchases.ws.pho.to/api/v2/apple/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/tm.js
+https://purchases.ws.pho.to/api/v2/apple/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/tm.js
 # > 056 酷我皮肤（2021-04-25） by ddgksf2013
-^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/theme)  url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/theme.js
+^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/theme)  url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/theme.js
 # > 055 Dayone（2021-05-15） by langkhach
-https:\/\/dayone\.(me|app)\/api\/(users|v2\/users\/(account-status|receipt))$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/dayone.js
+https:\/\/dayone\.(me|app)\/api\/(users|v2\/users\/(account-status|receipt))$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/dayone.js
 # > 054 卡通相机（2021-04-22） by ddgksf2013
-http://vstou.faxingwu.com/huihua/user/getUser url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/ktxj.js
+http://vstou.faxingwu.com/huihua/user/getUser url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/ktxj.js
 # > 053 Castbox（2021-04-18） by ddgksf2013
-https://everest.castbox.fm/auth/user/properties\?country=\w+&raw=1 url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/cb.js
+https://everest.castbox.fm/auth/user/properties\?country=\w+&raw=1 url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/cb.js
 # > 052 Keep（2021-04-18） by ddgksf2013
-;https://api.gotokeep.com/(.+/subject|.+/dynamic|.+/coursePlus/.+|.+/status|.+/tab|.+/my|.+/start|.+/join|.+/complete|.+/detail/.+|.+/preview|.+/auth|.+/tab|.+/days) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/keep_new.js
+;https://api.gotokeep.com/(.+/subject|.+/dynamic|.+/coursePlus/.+|.+/status|.+/tab|.+/my|.+/start|.+/join|.+/complete|.+/detail/.+|.+/preview|.+/auth|.+/tab|.+/days) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/keep_new.js
 # > 作业帮
-https://mall.zuoyebang.com/mall/goods/audio/voice/list?audioId=\d+ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/zuoyebang.js
-https://apivip.zybang.com/vipols/vip/viphomev1?.+ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/zuoyebang.js
+https://mall.zuoyebang.com/mall/goods/audio/voice/list?audioId=\d+ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/zuoyebang.js
+https://apivip.zybang.com/vipols/vip/viphomev1?.+ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/zuoyebang.js
 # > 050 PdfExpert（2021-04-03） by ddgksf2013
-;https:\/\/license\.pdfexpert\.com\/api\/.+\/pdfexpert6\/subscription\/(refresh$|check$) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/pdfexpert.js
+;https:\/\/license\.pdfexpert\.com\/api\/.+\/pdfexpert6\/subscription\/(refresh$|check$) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/pdfexpert.js
 # > 049  MolyCam and VaporCam （2021-04-02） by ddgksf2013
-https:\/\/pay\.wecut\.com\/apple\/(iosVerifyReceipt|iosAppVerifyReceipt)\.php url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/mv.js
+https:\/\/pay\.wecut\.com\/apple\/(iosVerifyReceipt|iosAppVerifyReceipt)\.php url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/mv.js
 # > 048 Myscript Nebo（2021-03-21） by ddgksf2013
-^https?:\/\/.*\.nebo\.app\/api\/.*\/inapppurchase\/apple\/receipt url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/nebo.js
+^https?:\/\/.*\.nebo\.app\/api\/.*\/inapppurchase\/apple\/receipt url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/nebo.js
 # > 047 Photoshop（2021-03-21） by ddgksf2013
-^https:\/\/.*\.adobe\..*\/mobile_profile\/nul\/v\d$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/ps.js
+^https:\/\/.*\.adobe\..*\/mobile_profile\/nul\/v\d$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/ps.js
 # > 046 财新周刊（2021-03-20） by ddgksf2013
-http://ipadcms.caixin.com/tmp/articles/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/cxzk.js
+http://ipadcms.caixin.com/tmp/articles/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/cxzk.js
 # > 045 医考帮（2021-03-13） by ddgksf2013
-https://api.yikaobang.com.cn/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/ykb.js
+https://api.yikaobang.com.cn/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/ykb.js
 # > 044 百度云（2021-03-10） by ddgksf2013
-https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/bdcloud.js
+https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/bdcloud.js
 # > 043 儿童睡前故事 （2021-01-31） by ddgksf2013
-https://www.babybooks.top/v0/profile url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/etsqgs.js
+https://www.babybooks.top/v0/profile url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/etsqgs.js
 # > 042 斑马海报 （2021-01-30） by ddgksf2013
-https://zebra.maka.im/api/user/info url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/bmhb.js
+https://zebra.maka.im/api/user/info url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/bmhb.js
 # > 041 读书笔记 （2021-01-06） by ddgksf2013
-https://xrckeji.com/union/app/user/query url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/mzjz.js
+https://xrckeji.com/union/app/user/query url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/mzjz.js
 # > 040 小习惯 （2021-01-06） by ddgksf2013
-https://xianbeikeji.com/daily/app/user/query url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/mzjz.js
+https://xianbeikeji.com/daily/app/user/query url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/mzjz.js
 # > 039 萌猪记账 （2021-01-06） by ddgksf2013
-https://xrckeji.com/itally/app/user/query url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/mzjz.js
+https://xrckeji.com/itally/app/user/query url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/mzjz.js
 # > 038 Scanner （2020-12-19） by ddgksf2013
-https://license.pdfexpert.com/api/2.0/scanner/subscription/refresh url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/sp.js
+https://license.pdfexpert.com/api/2.0/scanner/subscription/refresh url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/sp.js
 # > 037 圈子记账 （2020-12-14） by ddgksf2013
-https://quanzi.jizhangapp.com/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/qzjz.js
+https://quanzi.jizhangapp.com/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qzjz.js
 # > 035 用电助手 （2020-12-06） by ddgksf2013
-https://api.yonekura.cn/3.6.8/uicommon/getuser url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/cdzs.js
+https://api.yonekura.cn/3.6.8/uicommon/getuser url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/cdzs.js
 # > 美颜相机解锁紫钻V
-^https?:\/\/api\.account\.meitu\.com\/(common\/check_device_login_pwd|users\/show_current\.json) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/MeiYanXiangJi.js
-^https?:\/\/api\.meiyan\.com\/vip\/(user_center\.json|user_info\.json) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/MeiYanXiangJi.js
+^https?:\/\/api\.account\.meitu\.com\/(common\/check_device_login_pwd|users\/show_current\.json) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/MeiYanXiangJi.js
+^https?:\/\/api\.meiyan\.com\/vip\/(user_center\.json|user_info\.json) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/MeiYanXiangJi.js
 # > 032 每日艺术 （2020-11-23） by ddgksf2013
 https://panel.getdailyart.com/APIMobile/users/single url response-body account_type":"0 response-body account_type":"2
 # > 解锁 彩云天气/彩云天气Pro SV
-^https?:\/\/biz\.caiyunapp\.com\/v\d\/user url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/CaiYunWeather.js
+^https?:\/\/biz\.caiyunapp\.com\/v\d\/user url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/CaiYunWeather.js
 # > 030 豌豆清单 (2020-11-12) by ddgksf2013
-^https:\/\/www\.40sishi\.com\/list\/user\/profile$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/wdqd.js
+^https:\/\/www\.40sishi\.com\/list\/user\/profile$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/wdqd.js
 # > 029 Quicut (2020-11-12) by ddgksf2013
-http://outcut.szsszykj.com/api/OverseasPay/GetVip url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/qc.js
+http://outcut.szsszykj.com/api/OverseasPay/GetVip url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qc.js
 # > 028 伴鱼绘本 (2020-11-09) by ddgksf2013
-https://picturebook.ipalfish.com/pfapi(/profile/picturebook/get|/base/growthsystem/user/vip/equity/get) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/byhb.js
+https://picturebook.ipalfish.com/pfapi(/profile/picturebook/get|/base/growthsystem/user/vip/equity/get) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/byhb.js
 # > 027 Document （2020-11-08） by ddgksf2013
-;https:\/\/license\.pdfexpert\.com\/api\/.+\/subscription\/(refresh$|check$) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/documents.js
+;https:\/\/license\.pdfexpert\.com\/api\/.+\/subscription\/(refresh$|check$) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/documents.js
 # > 026 Fitplan （2020-11-07） by ddgksf2013
-https://api2.fitplanapp.com/fitplan-server/v2/user/profile url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/fitplan.js
+https://api2.fitplanapp.com/fitplan-server/v2/user/profile url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/fitplan.js
 # > 025 鲨鱼记账 （2020-11-04） by ddgksf2013
-https://api.shayujizhang.com/account/detail/info/ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/syjz.js
+https://api.shayujizhang.com/account/detail/info/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/syjz.js
 # > 024 万年历（2020-10-28） by ddgksf2013
-https://r.51wnl-cq.com/Api/User/GetExtInfo url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/wnl.js
+https://r.51wnl-cq.com/Api/User/GetExtInfo url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/wnl.js
 # > 023 樊登读书 （2020-10-26） by ddgksf2013
-https://api.dushu.io/Album/Info url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/fdds.js
+https://api.dushu.io/Album/Info url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/fdds.js
 # > 022 云听 （2020-10-20） by ddgksf2013
-http://getway.radio.cn/app* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/yt.js
+http://getway.radio.cn/app* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/yt.js
 # > 021 Reface （2020-10-13） by ddgksf2013
-https://api.reface.video/api/reface/v1/iosSubscription url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/reface.js
+https://api.reface.video/api/reface/v1/iosSubscription url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/reface.js
 # > 020 睡眠助手 （2020-10-10） by ddgksf2013
-https://www.helloshiyu.com/sleep/user/profile url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/smzs.js
+https://www.helloshiyu.com/sleep/user/profile url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/smzs.js
 # > 018 汉字的故事 （2020-10-02） by ddgksf2013
-https://avoscloud.com/1.1/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/hzdgs.js
+https://avoscloud.com/1.1/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/hzdgs.js
 # > 017 小妖精美化 （2020-10-02） by ddgksf2013
-https://bbs.maibaapp.com/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/xyjmh.js 
+https://bbs.maibaapp.com/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/xyjmh.js 
 # > 016 英语阅读 （2020-09-26） by ddgksf2013
-^http:\/\/duoting\.tatatimes\.com\/tataeraapi\/api\.s\?h=QueryVipUser url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/englishread.js 
+^http:\/\/duoting\.tatatimes\.com\/tataeraapi\/api\.s\?h=QueryVipUser url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/englishread.js 
 # > 015 趣制作（2020-09-25） by ddgksf2013
-https://cm.szsszykj.com/interface/GetVip.php url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/qzz.js
+https://cm.szsszykj.com/interface/GetVip.php url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qzz.js
 # > 014 Fantastical（2020-09-24） by ddgksf2013
-^https:\/\/api\.flexibits\.com\/(v1\/auth\/device|v1\/account\/details) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/fantastical.js
+^https:\/\/api\.flexibits\.com\/(v1\/auth\/device|v1\/account\/details) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/fantastical.js
 # > 012 Done （2020-09-14） by ddgksf2013
-http://dbapi.ganbuguo.com/user/userinfo url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/done.js
+http://dbapi.ganbuguo.com/user/userinfo url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/done.js
 # > 011 手机硬件管家 (2020-09-12) by ddgksf2013
-http:\/\/api\.591master\.com\:8081\/(1.0|3.6.8)\/ui(forum|common)\/(downloadwallpaper|getuser) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/phoneyjgj.js
+http:\/\/api\.591master\.com\:8081\/(1.0|3.6.8)\/ui(forum|common)\/(downloadwallpaper|getuser) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/phoneyjgj.js
 # > 010 MeisterTask (2020-09-10) by ddgksf2013
-https://www.mindmeister.com/api/v2/licenses/meistertask url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/meistertask.js
+https://www.mindmeister.com/api/v2/licenses/meistertask url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/meistertask.js
 # > 009 Pushover （2020-09-05） by ddgksf2013
-^https://api.pushover.net/1/messages.json url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/pushover.js
+^https://api.pushover.net/1/messages.json url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/pushover.js
 # > 008 Productive （2020-09-05） by ddgksf2013
-^https:\/\/subs\.platforms\.team\/.+\/apple\/verify$ url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/productive.js
+^https:\/\/subs\.platforms\.team\/.+\/apple\/verify$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/productive.js
 # > 007 葫芦时刻 （2020-09-05） by ddgksf2013
-^https:\/\/api\.hulusaas\.com\/api\/* url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/hulu.js
+^https:\/\/api\.hulusaas\.com\/api\/* url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/hulu.js
 # > 006 蜗牛睡眠 （2020-09-06） by ddgksf2013
-^https:\/\/(snailsleep\.net\/|(music|community)\.snailsleep\.net\/)(snail\/v1\/profile\/get|snail-music\/music\/(sleeping|meditation)\/single\/list) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/wnsm.js
+^https:\/\/(snailsleep\.net\/|(music|community)\.snailsleep\.net\/)(snail\/v1\/profile\/get|snail-music\/music\/(sleeping|meditation)\/single\/list) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/wnsm.js
 # > 004 大象冥想 （2020-09-04） by ddgksf2013
-^https?:\/\/nmeditation\.snailsleep\.net\/meditation-(audio|user|order|audio)\/(api|user)\/(audio\/master\/detail|get\/info|order/user\/vip\/info|ad\/get) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/dxmx.js
+^https?:\/\/nmeditation\.snailsleep\.net\/meditation-(audio|user|order|audio)\/(api|user)\/(audio\/master\/detail|get\/info|order/user\/vip\/info|ad\/get) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/dxmx.js
 # > 003 克拉壁纸 （2020-09-03） by ddgksf2013
-^https:\/\/claritywallpaper\.com\/clarity\/api\/(userInfo|special\/queryByCatalogAll) url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/clarity.js
+^https:\/\/claritywallpaper\.com\/clarity\/api\/(userInfo|special\/queryByCatalogAll) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/clarity.js
 # > 002 lensa （2020-09-02） by ddgksf2013
-^https?:\/\/subscription-service\.neuralprisma\.com\/subscription_get url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/lensa.js
+^https?:\/\/subscription-service\.neuralprisma\.com\/subscription_get url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/lensa.js
 # > 001 moo （2020-08-31)） by ddgksf2013
-https://diary.7english.cn:2433//api/user/userInfo url script-response-body https://gitee.com/a28413761/QX/raw/master/jiesuo/moo.js
+https://diary.7english.cn:2433//api/user/userInfo url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/moo.js
 # > 重定向
 ^https?:\/\/logoshejishi\.mairuan\.com\/ url 302 https://www.sothink.com/product/logo-design-software/
 ^https?:\/\/hypersnap\.mairuan\.com\/ url 302 https://www.hyperionics.com/

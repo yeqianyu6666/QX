@@ -335,6 +335,7 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
 ^https?:\/\/mobads\.baidu\.com\/cpro\/ui\/mads.+ url reject
 ^https:\/\/mobads\.baidu\.com\/cpro\/ui\/mads\.php.+ url reject
 ^https?:\/\/(www|m)\.baidu\.com(\/s\?word.*|\/from.*?\/s\?word.*|\/from.*?word=.*) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_baidu.js
+^https?:\/\/(www|m)\.baidu\.com(/|\/\?ref.*)$ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/JS/surge_baidu.index.js
 ^https?:\/\/(www|m)\.baidu\.com(/|\/\?ref.*)$ url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_baidu.index.js
 ^https?:\/\/(zhidao)\.baidu\.com\/(question|index|\?fr|\?word) url script-response-body https://gitee.com/a28413761/QX/raw/master/JS/surge_baidu.zhidao.js
 (ps|sv|offnavi|newvector|ulog.imap|newloc)(.map)?.(baidu|n.shifen).com url reject

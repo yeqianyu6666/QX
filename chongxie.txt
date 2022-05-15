@@ -1769,7 +1769,7 @@ https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVe
 # > 美图秀秀(2022.01.17) 解锁高级V（包括但不限于：付费海报模板、高级滤镜、高级素材等），无须登陆!
 ^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/MeiTuXiuXiu.js
 # > WPS解锁超级V，wpsV，稻壳V
-^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/Wps.js
+^https?:\/\/account\.wps\.cn\/api\/users url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
 # > 有道云笔记解锁V
 https://note.youdao.com/yws/(mapi/payment|api/self) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/ydybj.js
 # > 酷我音乐解锁SV

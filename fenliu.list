@@ -54,7 +54,10 @@ HOST-SUFFIX,offline-adv.oray.com, reject
 host-keyword, upload-cdn.orayimg.com-upload-activity, reject
 # > 小利生活
 host-keyword, mpos-pic.helipay.com, reject
-## 搜狗
+# > 懂车帝
+host-keyword, p3-pack.byteimg.com, reject
+host-keyword, p6-pack.byteimg.com, reject
+# > 搜狗
 host, indivi-cdn.shouji.sogou.com/wapdl/hole, reject
 HOST-SUFFIX,epro.sogou.com, reject
 HOST-SUFFIX,golden1.sogou.com, reject

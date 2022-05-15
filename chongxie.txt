@@ -1768,8 +1768,8 @@ https:\/\/book\.haitunwallet\.com\/app\/vip\/status url script-response-body htt
 ^https?:\/\/app\.api\.versa-ai\.com\/pay\/order\/iap\/check url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/MaKaLongWanTu.js
 # > Spotify部分解锁premium 需iOS15 ,建议重新登录,音质不能设置为超高，搜索界面 歌单/歌曲可以随意切换完全播放  2. 音乐库已点赞歌曲随意切换完全播放
 ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ url script-response-body https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js
-# > 轻颜相机 Ulike 蒸汽波相机(vaporcam) 三合一解锁V
-https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info) url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiesuo/qyxj.js
+# > 醒图，Ulike，轻颜相机，vaporcam（四合一）解鎖解锁V權限
+https://(commerce-.*api|pay).(faceu|wecut).(com|mobi)/(commerce|apple)/(iosAppVerifyReceipt.php|v1/subscription/user_info) url script-response-body https://github.com/ddgksf2013/Cuttlefish/raw/master/Crack/commerce.js
 # > 美图秀秀(2022.01.17) 解锁高级V（包括但不限于：付费海报模板、高级滤镜、高级素材等），无须登陆!
 ^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/ url script-response-body https://raw.githubusercontent.com/28413761/QX/main/jiaoben/MeiTuXiuXiu.js
 # > WPS解锁超级V，wpsV，稻壳V

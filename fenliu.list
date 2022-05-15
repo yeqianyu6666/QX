@@ -1058,7 +1058,6 @@ HOST-SUFFIX, sentry.io, reject
 HOST-SUFFIX, ads.bullionyield.com, reject
 HOST-KEYWORD, dlads, reject
 HOST, dagonghuzhu.com, reject
-HOST-SUFFIX, byteimg.com, reject
 HOST-KEYWORD, xxshuyuan, reject
 HOST-KEYWORD, haowanyou, reject
 HOST-KEYWORD, dat8, reject

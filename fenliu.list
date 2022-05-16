@@ -508,6 +508,8 @@ HOST,advertise.baicizhan.org, reject
 # > 易车
 HOST,adx.yiche.com, reject
 HOST,log.ycapp.yiche.com, reject
+# > 团油
+host-keyword, img1.czb365.com, reject
 # > Braze
 HOST-SUFFIX,iad.appboy.com, reject
 HOST-SUFFIX,iad-03.appboy.com, reject

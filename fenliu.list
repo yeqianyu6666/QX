@@ -1,6 +1,6 @@
 ## /*  APP开屏广告拦截，APP启动广告拦截！
 ##  a28413761  收集整理
-## 更新时间  2022.05.15
+## 更新时间  2022.05.16
 ## */  
 
 # > 光大银行阳光惠生活
@@ -602,6 +602,22 @@ host-keyword, log-dmp.suishenyun.cn, reject
 host-keyword, client-dmp.suishenyun.cn, reject
 host-keyword, pc.suishenyun.net, reject
 host-keyword, v0-client-lz.rili.cn, reject
+# > 腾讯视频
+host-suffix, tetrack.qq.com
+host-suffix, tpns.tencent.com
+host-suffix, api.poll.video.qq.com
+host-suffix, static-res.qq.com
+host-suffix, stat.tpns.tencent.com
+host, h.trace.qq.com
+# > 爱奇艺
+host, cr-status.iqiyi.com
+host-suffix, cupid.iqiyi.com
+host, f74f7f7765f8a2f6.ngaa.net.cn
+host, ef-dongfeng.tanx.com
+host, iqiyim.adtrack.enlightent.cn
+HOST,dig.bdurl.net
+HOST,ads3-normal-lq.zijieapi.com
+HOST,ads5-normal-lq.zijieapi.com
 # > 咪咕视频
 HOST-SUFFIX,ad.cmvideo.cn, reject
 HOST,ggc.cmvideo.cn, reject
